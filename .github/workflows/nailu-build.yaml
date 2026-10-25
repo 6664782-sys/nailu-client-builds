@@ -87,7 +87,7 @@ jobs:
         run: |
           import hashlib, pathlib, zipfile
           patch = pathlib.Path('nailu-update.zip')
-          assert hashlib.sha256(patch.read_bytes()).hexdigest() == '77ed8ab94f6e25a5c7bb7aae276e15379e52893aefc622ce4e0c3d3b4011621b'
+          assert hashlib.sha256(patch.read_bytes()).hexdigest() == 'c51f1cce2c60fc9b41666d7dcbafe80dd98888af2b1617038f3af9fca5bd78b6'
           with zipfile.ZipFile(patch) as archive:
               assert sum(i.file_size for i in archive.infolist()) < 32 * 1024 * 1024
               for name in archive.namelist():
